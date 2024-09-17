@@ -3,8 +3,7 @@
 def apply_all_func(int_list, *functions):
     result = {}
     for fun in functions:
-        operation = (fun(int_list))
-        result[fun.__name__] = operation
+        result[fun.__name__] = (fun(int_list))
     return result
 
 
