@@ -3,7 +3,7 @@ def is_prime(func):
     def wrapper(*args):
         total = func(*args)
         d = 2
-        while total % d != 0:
+        for d in range(2, int(total**0.5) + 1):
             d += 1
         if (d == total) == True:
             print('Простое')
@@ -15,9 +15,7 @@ def is_prime(func):
 
 @is_prime
 def sum_three(*args):
-    total = 0
-    for i in args:
-        total += i
+    total = sum(args)
     return total
 
 result = sum_three(2, 3, 6)
